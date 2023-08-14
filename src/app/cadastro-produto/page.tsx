@@ -6,8 +6,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import styles from "./page.module.scss";
 import { ErrorMessage } from "@/components/ErrorMessage";
 import { api } from "@/services/api";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function RegisterProduct() {
+
+    const router = useRouter();
 
     const validationSchema = z.object({
         name: z.string().nonempty('Campo obrigatório.'),
@@ -25,16 +29,29 @@ export default function RegisterProduct() {
 
     async function handleRegisterProduct(data: ValidationSchema) {
         const fetchData = await api.registerProduct(data);
-
-        console.log(fetchData)
+        alert(fetchData.message);
     }
+
+    function handleUserLogOut() {
+        localStorage.removeItem('@USER_TOKEN');
+        router.push('/login');
+    }
+
+    useEffect(() => {
+        if(localStorage.getItem('@USER_TOKEN') === null) {
+            return router.push('/login');
+        }
+    }, []);
 
     return (
         <div className={styles.main__wrapper}>
-            <div>
-                <h1>Cadastrar Novo Produto</h1>
-                <p>Preencha todas as informações</p>
-            </div>
+            <header className={styles.header}>
+                <div>
+                    <h1>Cadastrar Novo Produto</h1>
+                    <p>Preencha todas as informações</p>
+                </div>
+                <button onClick={handleUserLogOut}>Sair</button>
+            </header>
             <form onSubmit={handleSubmit(handleRegisterProduct)}>
                 <div className={styles.field__group}>
                     <label>Nome do produto</label>

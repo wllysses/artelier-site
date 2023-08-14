@@ -19,7 +19,7 @@ async function getProductsByCategory(category: string) {
 }
 
 async function registerProduct(data: { name: string, category_id: string, price: string, photo:string, description: string }) {
-    const response = await fetch('http://localhost:3001/api/produtos', {
+    const response = await fetch(`${BASE_URL}/api/produtos`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -35,9 +35,24 @@ async function registerProduct(data: { name: string, category_id: string, price:
     return await response.json();
 }
 
+async function userLogin(data: { email: string, password: string }) {
+    const response = await fetch(`${BASE_URL}/api/auth`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            email: data.email,
+            password: data.password
+        })
+    });
+    return await response.json();
+}
+
 export const api = {
     getProducts,
     getProductById,
     getProductsByCategory,
-    registerProduct
+    registerProduct,
+    userLogin
 }
