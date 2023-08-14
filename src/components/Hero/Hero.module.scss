@@ -1,0 +1,17 @@
+.section__hero {
+    width: 100%;
+    min-height: 35vh;
+    background: url('https://marketplace.canva.com/EAFITuOI0Fc/1/0/1600w/canva-papel-de-parede-minimalista-tons-pasteis-QCWwaunOtBw.jpg') center center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 200 !important;
+
+    h1 {
+        font-weight: 300;
+        font-size: 2.5rem;
+    }
+}

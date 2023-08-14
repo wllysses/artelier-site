@@ -1,0 +1,33 @@
+.main__wrapper {
+    width: 100%;
+    margin: 2rem 0;
+
+    .main__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .filter {
+            display: flex;
+            gap: 0.3rem;
+
+            select {
+                border: 1px solid #cccccc;
+                border-radius: 0.3rem;
+                outline: none;
+            }
+        }
+    }
+
+    .main__body {
+        min-height: 50vh;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        text-align: center;
+    }
+}

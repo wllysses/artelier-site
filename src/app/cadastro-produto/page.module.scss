@@ -1,0 +1,46 @@
+.main__wrapper {
+    max-width: 800px;
+    width: 100%;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+
+    form {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        .field__group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+
+            label {
+                font-weight: 700;
+            }
+
+            input, select, textarea {
+                padding: 0.5rem;
+                border: 1px solid #cccccc;
+                border-radius: 0.3rem;
+                outline: none;
+            }
+
+            textarea {
+                resize: none;
+                font-family: var(--primary-font);
+            }
+        }
+
+        button {
+            padding: 0.5rem;
+            background-color: var(--secondary-color);
+            border: none;
+            outline: none;
+            color: #fff;
+            font-weight: 700;
+            font-family: var(--primary-font);
+            font-size: 1rem;
+        }
+    }
+}

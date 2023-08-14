@@ -1,0 +1,17 @@
+.products__section {
+    width: 100%;
+    margin-top: 2rem;
+
+    h2 {
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+
+    .products__wrapper {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
