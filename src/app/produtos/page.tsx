@@ -27,6 +27,8 @@ export default function Products() {
         !select ? fetchProductsData() : fetchCategoriesData();
     }, [select]);
 
+    console.log(products);
+
     return (
         <>
             <Header />
@@ -35,7 +37,7 @@ export default function Products() {
                     <div className={styles.main__header}>
                         <h2>Produtos</h2>
                         <div className={styles.filter}>
-                            <label htmlFor="">Filtrar</label>
+                            <label htmlFor="selectCategory">Filtrar</label>
                             <select id="selectCategory" onChange={(e) => setSelect(e.target.value)}>
                                 <option value="" selected>Todos</option>
                                 <option value="Quadros">Quadros</option>
@@ -52,8 +54,8 @@ export default function Products() {
                         { !products.length && <Spinner type="products" /> }
                         {
                             products &&
-                            products.map((product) => (
-                                <Card key={product.id} product={product} type="buy" />
+                            products.map((product, index) => (
+                                <Card key={index} product={product} type="buy" />
                             ))
                         }
                     </div>
