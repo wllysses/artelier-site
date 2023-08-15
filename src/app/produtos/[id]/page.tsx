@@ -10,6 +10,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Spinner } from "@/components/Spinner";
 import styles from "./page.module.scss";
+import { useRouter } from "next/navigation";
 
 
 interface ParamsProps {
@@ -20,6 +21,8 @@ interface ParamsProps {
 
 
 export default function FilteredProducts({ params: { id } }: ParamsProps) {
+
+    const router = useRouter();
 
     const [product, setProduct] = useState({} as Product);
 
@@ -41,13 +44,13 @@ export default function FilteredProducts({ params: { id } }: ParamsProps) {
             <Header />
             <main className={styles.main__wrapper}>
                 <div className="container">
-                    <Link href="/" className={styles.main__header}>
+                    <button className={styles.main__header} onClick={() => router.back()}>
                         <FaArrowLeft
                             color="#000"
                             size={20}
                         />
                         <h2>Produto</h2>
-                    </Link>
+                    </button>
                     <div className={styles.main__body}>
                         {
                             !Object.keys(product).length
