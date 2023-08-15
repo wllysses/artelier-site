@@ -8,7 +8,9 @@ export function Footer() {
                 <div className={styles.footer__wrapper}>
                     <div className={styles.folow}>
                         <h4>Siga-nos</h4>
-                        <BiLogoInstagram size={25}/>
+                        <a href="https://www.instagram.com/artelier_pb/" target="_blank">
+                            <BiLogoInstagram size={25} color="white"/>
+                        </a>
                     </div>
                     <div className={styles.products}>
                         <h4>Nossos produtos</h4>
@@ -24,8 +26,16 @@ export function Footer() {
                     <div className={styles.contacts}>
                         <h4>Entre em contato</h4>
                         <ul>
-                            <li>(83)98690-3987</li>
-                            <li>@artelier_pb</li>
+                            <li>
+                                <a href="https://api.whatsapp.com/send?phone=5583986903987" target="_blank">
+                                    (83)98690-3987
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/artelier_pb/" target="_blank">
+                                    @artelier_pb
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div className={styles.address}>

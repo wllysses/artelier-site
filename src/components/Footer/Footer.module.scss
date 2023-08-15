@@ -12,6 +12,10 @@
         gap: 1rem;
         color: #fff;
 
+        a {
+            color: #fff;
+        }
+
         @media(max-width: 600px) {
             grid-template-columns: repeat(1, 1fr);
         }
