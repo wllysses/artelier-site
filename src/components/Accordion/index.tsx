@@ -20,9 +20,13 @@ export function Accordion() {
                         response="O quadro é feito com papel guache de qualidade( alta gramatura).  Não trabalhamos com MDF ou afins."
                     />
                     <AccordionItem 
-                        question="Como limpar e Manter?"
+                        question="Como limpar e manter?"
                         response="Para limpar usar apenas um pano seco ou levemente úmido.
                         Para manter, basta utilizá-lo em locais secos, sem umidade ou exposição ao sol."
+                    />
+                    <AccordionItem 
+                        question="Posso personalizar o item que desejar?"
+                        response="Sim! As imagens são meramente ilustrativas (apesar de autorais), sendo assim é possível personalizar o item desejado da forma como quiser."
                     />
                 </div>
             </div>

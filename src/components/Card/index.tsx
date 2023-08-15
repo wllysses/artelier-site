@@ -11,7 +11,7 @@ interface CardProps {
 export function Card({ product, type }: CardProps) {
 
     function formatPrice(price: number) {
-        return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+        return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     }
 
     return (
@@ -26,7 +26,7 @@ export function Card({ product, type }: CardProps) {
                 <div style={{ textAlign: 'center' }}>
                     <h4>{product.name}</h4>
                     { 
-                        type === 'buy' && <span>{formatPrice(product.price!)}</span> 
+                        type === 'buy' && <span>{formatPrice(product.price!) + `${product.price! < 5 ? ' (unidade)' : ''}`}</span> 
                     }
                 </div>
                 <button>

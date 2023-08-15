@@ -6,8 +6,8 @@ import { Product } from "@/models/ProductModel";
 import { Header } from "@/components/Header";
 import { Card } from "@/components/Card";
 import { Footer } from "@/components/Footer";
-import styles from "./page.module.scss";
 import { Spinner } from "@/components/Spinner";
+import styles from "./page.module.scss";
 
 export default function Products() {
 
@@ -26,8 +26,6 @@ export default function Products() {
 
         !select ? fetchProductsData() : fetchCategoriesData();
     }, [select]);
-
-    console.log(products);
 
     return (
         <>

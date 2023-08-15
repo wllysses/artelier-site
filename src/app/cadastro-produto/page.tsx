@@ -1,13 +1,13 @@
 'use client';
 
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import styles from "./page.module.scss";
-import { ErrorMessage } from "@/components/ErrorMessage";
-import { api } from "@/services/api";
-import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { api } from "@/services/api";
+import { ErrorMessage } from "@/components/ErrorMessage";
+import styles from "./page.module.scss";
 
 export default function RegisterProduct() {
 
