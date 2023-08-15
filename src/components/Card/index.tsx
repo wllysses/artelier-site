@@ -42,7 +42,10 @@ export function Card({ product, type }: CardProps) {
                                 <span>Comprar</span>
                             </a> 
                             : 
-                            <Link href={`/produtos/${product.id}`} style={{ color: '#fff' }}>
+                            <Link 
+                                href={`/produtos/${product.id}`} 
+                                style={{ display: 'inline-block', color: '#fff', width: '100%', padding: '0.5rem' }}
+                            >
                                 Ver mais
                             </Link>
                     }

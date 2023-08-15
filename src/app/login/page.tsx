@@ -57,12 +57,12 @@ export default function LoginPage() {
                 <form className={styles.form} onSubmit={handleSubmit(handleLogin)}>
                     <div className={styles.field__group}>
                         <label>E-mail</label>
-                        <input type="email" id="email" {...register('email')} />
+                        <input type="email" id="email" placeholder="Digite seu e-mail" {...register('email')} />
                         {errors.email && <ErrorMessage message={errors.email.message!} />}
                     </div>
                     <div className={styles.field__group}>
                         <label>Senha</label>
-                        <input type="password" id="password" {...register('password')} />
+                        <input type="password" id="password" placeholder="Digite sua senha" {...register('password')} />
                         {errors.password && <ErrorMessage message={errors.password.message!} />}
                     </div>
                     <button type="submit">Entrar</button>
