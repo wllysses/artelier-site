@@ -45,6 +45,7 @@ export default function Products() {
                                 <option value="Polaroides">Polaroides</option>
                                 <option value="Caixas">Caixas</option>
                                 <option value="Sacolas">Sacolas</option>
+                                <option value="Album">Álbum</option>
                             </select>
                         </div>
                     </div>
