@@ -1,4 +1,4 @@
-import { BiLogoInstagram } from "react-icons/bi";
+import { BiLogoInstagram, BiLogoWhatsapp } from "react-icons/bi";
 import styles from "./Footer.module.scss";
 
 export function Footer() {
@@ -10,6 +10,7 @@ export function Footer() {
                         <h4>Siga-nos</h4>
                         <a href="https://www.instagram.com/artelier_pb/" target="_blank">
                             <BiLogoInstagram size={25} color="white"/>
+                            @artelier_pb
                         </a>
                     </div>
                     <div className={styles.products}>
@@ -28,11 +29,13 @@ export function Footer() {
                         <ul>
                             <li>
                                 <a href="https://api.whatsapp.com/send?phone=5583986903987" target="_blank">
+                                    <BiLogoWhatsapp size={25}/>
                                     (83)98690-3987
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.instagram.com/artelier_pb/" target="_blank">
+                                    <BiLogoInstagram size={25}/>
                                     @artelier_pb
                                 </a>
                             </li>

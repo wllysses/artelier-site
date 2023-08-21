@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { BiLogoWhatsapp } from "react-icons/bi";
 import Link from "next/link";
 import { Product } from "@/models/ProductModel";
@@ -33,7 +32,7 @@ export function Card({ product, type }: CardProps) {
             <div className={styles.card__data}>
                 <div style={{ textAlign: 'center' }}>
                     <h4>{product.name}</h4>
-                    {type === 'buy' && <span>{formatPrice(product.price!) + `${product.price! < 5 ? ' (unidade)' : ''}`}</span>}
+                    {type === 'buy' && <span>{formatPrice(product.price!) + `${product.price! <= 5 ? ' (unidade)' : ''}`}</span>}
                 </div>
                 <button>
                     {
