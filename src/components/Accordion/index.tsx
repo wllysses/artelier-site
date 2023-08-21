@@ -26,7 +26,7 @@ export function Accordion() {
                     />
                     <AccordionItem 
                         question="Posso personalizar o item que desejar?"
-                        response="Sim! As imagens são meramente ilustrativas (apesar de autorais), sendo assim é possível personalizar o item desejado da forma como quiser."
+                        response="Sim! As imagens são meramente ilustrativas (apesar de autorais), sendo assim é possível personalizar o item desejado da forma como quiser. Basta nos enviar as informações de como deseja personalizar assim que for redirecionado para o nosso Whatsapp."
                     />
                 </div>
             </div>

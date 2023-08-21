@@ -22,6 +22,8 @@ export function Footer() {
                             <li>Caixas</li>
                             <li>Chaveiros</li>
                             <li>Convites</li>
+                            <li>Sacolas</li>
+                            <li>Álbuns</li>
                         </ul>
                     </div>
                     <div className={styles.contacts}>
