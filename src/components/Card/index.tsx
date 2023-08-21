@@ -19,7 +19,7 @@ export function Card({ product, type }: CardProps) {
             <div
                 className={styles.card__image}
                 style={{
-                    backgroundImage: `url('${product.photo}')`
+                    backgroundImage: `url('${Array.isArray(product.photo) ? product.photo[0] : product.photo}')`
                 }}
             >
                 {

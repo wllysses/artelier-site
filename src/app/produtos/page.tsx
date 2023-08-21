@@ -1,30 +1,27 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { api } from "@/services/api";
 import { Product } from "@/models/ProductModel";
 import { Header } from "@/components/Header";
 import { Card } from "@/components/Card";
 import { Footer } from "@/components/Footer";
 import { Spinner } from "@/components/Spinner";
+import productsList from "../../mocks/products.json";
 import styles from "./page.module.scss";
 
 export default function Products() {
 
     const [select, setSelect] = useState('');
-    const [products, setProducts] = useState<Product[]>([]);
+    const [allProducts] = useState<Product[]>(productsList);
+    const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+
+    function filterProductsByCategory() {
+        const filteredProducts = allProducts.filter((product) => product.category_id === parseInt(select));
+        setFilteredProducts(filteredProducts);
+    }
 
     useEffect(() => {
-        async function fetchProductsData() {
-            const products = await api.getProducts();
-            setProducts(products);
-        }
-        async function fetchCategoriesData() {
-            const categories = await api.getProductsByCategory(select);
-            setProducts(categories);
-        }
-
-        !select ? fetchProductsData() : fetchCategoriesData();
+        select ? filterProductsByCategory() : setFilteredProducts(allProducts);
     }, [select]);
 
     return (
@@ -38,22 +35,21 @@ export default function Products() {
                             <label htmlFor="selectCategory">Filtrar</label>
                             <select id="selectCategory" onChange={(e) => setSelect(e.target.value)}>
                                 <option value="" selected>Todos</option>
-                                <option value="Quadros">Quadros</option>
-                                <option value="Convites">Convites</option>
-                                <option value="Kits">Kits</option>
-                                <option value="Chaveiros">Chaveiros</option>
-                                <option value="Polaroides">Polaroides</option>
-                                <option value="Caixas">Caixas</option>
-                                <option value="Sacolas">Sacolas</option>
-                                <option value="Album">Álbum</option>
+                                <option value={1}>Quadros</option>
+                                <option value={2}>Convites</option>
+                                <option value={3}>Kits</option>
+                                <option value={4}>Chaveiros</option>
+                                <option value={5}>Polaroides</option>
+                                <option value={6}>Caixas</option>
+                                <option value={7}>Sacolas</option>
+                                <option value={8}>Álbum</option>
                             </select>
                         </div>
                     </div>
                     <div className={styles.main__body}>
-                        { !products.length && <Spinner type="products" /> }
+                        { !filteredProducts.length && <Spinner type="products" /> }
                         {
-                            products &&
-                            products.map((product, index) => (
+                            filteredProducts.map((product, index) => (
                                 <Card key={index} product={product} type="buy" />
                             ))
                         }

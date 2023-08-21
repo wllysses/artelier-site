@@ -16,9 +16,9 @@ export function Header() {
                     </div>
                     <Image src={logo} alt="Artelier Logo"/>
                     <nav className={styles.menu}>
-                        <Link href="/">Home</Link>
+                        <Link href="/">Página inicial</Link>
                         <Link href="/produtos">Produtos</Link>
-                        <Link href="/login">Login</Link>
+                        {/* <Link href="/login">Login</Link> */}
                     </nav>
                 </div>
             </div>

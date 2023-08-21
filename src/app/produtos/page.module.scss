@@ -25,9 +25,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 1rem;
         flex-wrap: wrap;
-
+        gap: 1rem;
         text-align: center;
+        
+        @media(max-width: 580px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }

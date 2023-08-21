@@ -1,21 +1,26 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { BiLogoWhatsapp } from "react-icons/bi";
 import { FaArrowLeft } from "react-icons/fa";
-import Link from "next/link";
-import { api } from "@/services/api";
 import { Product } from "@/models/ProductModel";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Spinner } from "@/components/Spinner";
 import styles from "./page.module.scss";
-import { useRouter } from "next/navigation";
+
+import productsList from "@/mocks/products.json";
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { EffectCards, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
 
 
 interface ParamsProps {
     params: {
-        id: number
+        id: string
     }
 }
 
@@ -27,12 +32,8 @@ export default function FilteredProducts({ params: { id } }: ParamsProps) {
     const [product, setProduct] = useState({} as Product);
 
     useEffect(() => {
-        async function fetchData() {
-            const product = await api.getProductById(id as number);
-            setProduct(product);
-        }
-
-        fetchData();
+        const filteredProduct = productsList.filter((product) => product.id === parseInt(id));
+        setProduct(filteredProduct[0]);
     }, []);
 
     function formatPrice(price: number) {
@@ -53,15 +54,34 @@ export default function FilteredProducts({ params: { id } }: ParamsProps) {
                     </button>
                     <div className={styles.main__body}>
                         {
-                            !Object.keys(product).length
-                                ?
-                                <Spinner type="products" />
-                                :
+                            !Object.keys(product).length ? <Spinner type="products" /> :
                                 <>
-                                    <div
-                                        className={styles.photo}
-                                        style={{ backgroundImage: `url('${product.photo}')` }}
-                                    />
+                                    <Swiper
+                                        effect={'cards'}
+                                        grabCursor={true}
+                                        modules={[EffectCards, Autoplay]}
+                                        className={styles.swiper}
+                                    >
+                                        {
+                                            Array.isArray(product.photo) ?
+                                                product.photo.map((photo, index) => (
+                                                    <SwiperSlide key={index}>
+                                                        <div
+                                                            className={styles.photo}
+                                                            style={{ backgroundImage: `url('${photo}')` }}
+                                                        />
+                                                    </SwiperSlide>
+
+                                                )) :
+                                                <SwiperSlide>
+                                                    <div
+                                                        className={styles.photo}
+                                                        style={{ backgroundImage: `url('${product.photo}')` }}
+                                                    />
+                                                </SwiperSlide>
+                                        }
+                                    </Swiper>
+
                                     <div className={styles.product__details}>
                                         <h3>{product.name}</h3>
                                         <h4>{formatPrice(product.price!)}</h4>
