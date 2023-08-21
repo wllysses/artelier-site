@@ -23,13 +23,14 @@ export default function RegisterProduct() {
 
     type ValidationSchema = z.infer<typeof validationSchema>;
 
-    const { register, handleSubmit, formState: { errors } } = useForm<ValidationSchema>({
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<ValidationSchema>({
         resolver: zodResolver(validationSchema)
     });
 
     async function handleRegisterProduct(data: ValidationSchema) {
         const fetchData = await api.registerProduct(data);
         alert(fetchData.message);
+        reset();
     }
 
     function handleUserLogOut() {
@@ -72,6 +73,7 @@ export default function RegisterProduct() {
                         <option value={5}>Polaroides</option>
                         <option value={6}>Caixas</option>
                         <option value={7}>Sacolas</option>
+                        <option value={8}>Álbum</option>
                     </select>
                     { errors.category_id && <ErrorMessage message={errors.category_id.message!}/> }
                 </div>
