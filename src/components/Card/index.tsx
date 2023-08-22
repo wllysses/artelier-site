@@ -31,7 +31,7 @@ export function Card({ product, type }: CardProps) {
             </div>
             <div className={styles.card__data}>
                 <div style={{ textAlign: 'center' }}>
-                    <h4>{product.name}</h4>
+                    <h4 title={product.name}>{product.name}</h4>
                     {type === 'buy' && <span>{formatPrice(product.price!) + `${product.price! <= 5 ? ' (unidade)' : ''}`}</span>}
                 </div>
                 <button>
