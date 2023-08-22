@@ -85,16 +85,21 @@
                 .details__data__button {
                     width: 100%;
                     padding: 0.5rem;
-                    color: var(--primary-color);
                     background-color: var(--secondary-color);
-                    border: none;
-                    outline: none;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 0.3rem;
-                    font-weight: 700;
-                    font-size: 0.9rem;
+                    
+                    button {
+                        font-weight: 700;
+                        font-size: 0.9rem;
+                        width: 100%;
+                        color: var(--primary-color);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.2rem;
+                        background-color: transparent;
+                        outline: none;
+                        border: none;
+                    }
                 }
             }
         }

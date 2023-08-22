@@ -4,6 +4,7 @@ import { useStore } from "@/store/store";
 import Link from "next/link";
 import { Product } from "@/models/ProductModel";
 import styles from "./Card.module.scss";
+import { formatPrice, getProductPhoto } from "@/functions";
 
 interface CardProps {
     product: Product
@@ -13,14 +14,6 @@ interface CardProps {
 export function Card({ product, type }: CardProps) {
 
     const { addProduct } = useStore();
-
-    function formatPrice(price: number) {
-        return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    }
-
-    function getProductPhoto(link: string | string[]) {
-        return Array.isArray(link) ? link[0] : link;
-    }
 
     function addProductOnCart(product: Product) {
         addProduct(product);

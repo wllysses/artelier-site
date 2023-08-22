@@ -7,6 +7,7 @@ import { useStore } from "@/store/store";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import styles from "./page.module.scss";
+import { getProductPhoto } from "@/functions";
 
 export default function ShoppingCart() {
 
@@ -33,6 +34,13 @@ export default function ShoppingCart() {
         handleTotalPrices();
     }, [total, products]);
 
+    let message = `Olá. Gostaria de encomendar os seguintes itens:\n\n`;
+    for (const product of products) {
+        message += `Nome: ${product.name}\nPreço: ${formatPrice(product.price!)}\nFoto: ${getProductPhoto(product.photo)}\n\n`;
+    }
+
+    let messageEncoded = encodeURIComponent(message);
+
     return (
         <>
             <Header />
@@ -43,19 +51,19 @@ export default function ShoppingCart() {
                     </div>
                     <div className={styles.main__body}>
                         <div className={styles.products__list}>
-                            { !products.length && <span>Carrinho vazio.</span> }
+                            {!products.length && <span>Carrinho vazio.</span>}
                             {
                                 products.map((product) => (
                                     <div className={styles.products__list__item} key={product.id}>
-                                        <div 
-                                            className={styles.product__photo} 
-                                            style={{ 
-                                                backgroundImage: `url(${Array.isArray(product.photo) ? product.photo[0] : product.photo})` 
-                                            }} 
+                                        <div
+                                            className={styles.product__photo}
+                                            style={{
+                                                backgroundImage: `url(${Array.isArray(product.photo) ? product.photo[0] : product.photo})`
+                                            }}
                                         />
                                         <h4 className={styles.product__name} title={product.name}>{product.name}</h4>
                                         <h4>{formatPrice(product.price!)}</h4>
-                                        <BiSolidTrash size={20}  cursor="pointer" onClick={() => removeProductInCart(product.id)}/>
+                                        <BiSolidTrash size={20} cursor="pointer" onClick={() => removeProductInCart(product.id)} />
                                     </div>
                                 ))
                             }
@@ -67,10 +75,12 @@ export default function ShoppingCart() {
                                     <h4>Total -</h4>
                                     <h4>{formatPrice(total)}</h4>
                                 </div>
-                                <button className={styles.details__data__button} disabled={!products.length}>
-                                    <BiLogoWhatsapp size={25} />
-                                    Finalizar compra
-                                </button>
+                                <a href={`https://api.whatsapp.com/send?phone=5583986903987&text=${messageEncoded}Total%20da%20compra:%20${formatPrice(total)}`} target="_blank" className={styles.details__data__button}>
+                                    <button disabled={!products.length}>
+                                        <BiLogoWhatsapp size={25} />
+                                        Finalizar compra
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
