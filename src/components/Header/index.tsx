@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/../public/artelier-logo.jpg";
 import styles from "./Header.module.scss";
-import { useWindowDimensions } from "@/hooks/useDimension";
+import { useWindowDimensions  } from "@/hooks/useWindowDimension";
 
 export function Header() {
 
@@ -22,7 +22,7 @@ export function Header() {
                         <Link href="/">Página inicial</Link>
                         <Link href="/produtos">Produtos</Link>
                         { 
-                            width <= 550 
+                            width! <= 550 
                                 && 
                                 <div className={styles.shopping__cart}>
                                     <Link href="/carrinho-compras">
@@ -33,7 +33,7 @@ export function Header() {
                         }
                     </nav>
                     <Image src={logo} alt="Artelier Logo"/>
-                    <div className={styles.shopping__cart} style={{ display: `${width <= 550 ? 'none' : 'block'}` }}>
+                    <div className={styles.shopping__cart} style={{ display: `${width! <= 550 ? 'none' : 'block'}` }}>
                         <Link href="/carrinho-compras">
                             <AiOutlineShoppingCart size={25} />
                         </Link>
