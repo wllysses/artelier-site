@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 import { Product } from "@/models/ProductModel";
 import { Header } from "@/components/Header";
 import { Card } from "@/components/Card";
@@ -8,6 +9,8 @@ import { Footer } from "@/components/Footer";
 import { Spinner } from "@/components/Spinner";
 import productsList from "../../mocks/products.json";
 import styles from "./page.module.scss";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function Products() {
 
@@ -26,6 +29,7 @@ export default function Products() {
 
     return (
         <>
+            <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} position="top-center"  autoClose={1000} />
             <Header />
             <main className={styles.main__wrapper}>
                 <div className="container">
@@ -43,6 +47,8 @@ export default function Products() {
                                 <option value={6}>Caixas</option>
                                 <option value={7}>Sacolas</option>
                                 <option value={8}>Álbum</option>
+                                <option value={9}>Centro</option>
+                                <option value={10}>Balas</option>
                             </select>
                         </div>
                     </div>

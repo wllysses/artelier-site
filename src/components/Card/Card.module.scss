@@ -16,12 +16,20 @@
             width: 100%;
             height: 100%;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 0.5rem;
 
             a {
                 border: none;
                 color: transparent;
+            }
+
+            button {
+                border: none;
+                color: transparent;
+                background-color: transparent;
             }
 
             &:hover {
@@ -31,6 +39,13 @@
                     padding: 0.3rem;
                     border: 1px solid #fff;
                     color: #fff;
+                }
+
+                button {
+                    padding: 0.4rem;
+                    border: 1px solid #fff;
+                    color: #fff;
+                    font-size: 1rem;
                 }
             }
         }
@@ -47,12 +62,15 @@
             font-size: 0.85rem;
         }
 
-        button {
+        .card__data__button {
             width: 100%;
             background-color: #000;
             color: #fff;
             border: none;
             outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .card__button {
@@ -60,6 +78,11 @@
             align-items: center;
             justify-content: center;
             gap: 0.3rem;
+            color: #fff;
+            padding: 0.3rem;
+        }
+
+        .view__more__button {
             color: #fff;
             padding: 0.3rem;
         }
@@ -72,6 +95,5 @@
                 text-overflow: ellipsis;
             }
         }
-
     }
 }

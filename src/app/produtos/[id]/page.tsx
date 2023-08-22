@@ -40,6 +40,10 @@ export default function FilteredProducts({ params: { id } }: ParamsProps) {
         return price?.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     }
 
+    function getProductPhoto(link: string | string[]) {
+        return Array.isArray(link) ? link[0] : link;
+    }
+
     return (
         <>
             <Header />
@@ -87,7 +91,7 @@ export default function FilteredProducts({ params: { id } }: ParamsProps) {
                                         <h4>{formatPrice(product.price!)}</h4>
                                         <p>{product.description}</p>
                                         <a
-                                            href={`https://api.whatsapp.com/send?phone=5583986903987&text=Ol%C3%A1.%20Tudo%20bem?%20Gostaria%20de%20adquirir%20o%20item: ${product.name}.`}
+                                            href={`https://api.whatsapp.com/send?phone=5583986903987&text=Ol%C3%A1.%20Tude%20bem?%0AGostaria%20de%20encomendar%20um(a)%20${product.name}%20com%20este%20modelo%20(${getProductPhoto(product.photo)})`}
                                             target="_blank"
                                             className={styles.card__button}
                                         >

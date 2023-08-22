@@ -1,4 +1,6 @@
 import { BiLogoWhatsapp } from "react-icons/bi";
+import { toast } from "react-toastify";
+import { useStore } from "@/store/store";
 import Link from "next/link";
 import { Product } from "@/models/ProductModel";
 import styles from "./Card.module.scss";
@@ -10,8 +12,19 @@ interface CardProps {
 
 export function Card({ product, type }: CardProps) {
 
+    const { addProduct } = useStore();
+
     function formatPrice(price: number) {
         return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function getProductPhoto(link: string | string[]) {
+        return Array.isArray(link) ? link[0] : link;
+    }
+
+    function addProductOnCart(product: Product) {
+        addProduct(product);
+        toast.success('Adicionado ao carrinho 🛒');
     }
 
     return (
@@ -26,6 +39,7 @@ export function Card({ product, type }: CardProps) {
                     type === 'buy' &&
                     <div className={`${styles.view__more}`}>
                         <Link href={`/produtos/${product.id}`}>Ver mais</Link>
+                        <button onClick={() => addProductOnCart(product)}>Adicionar ao carrinho</button>
                     </div>
                 }
             </div>
@@ -34,12 +48,12 @@ export function Card({ product, type }: CardProps) {
                     <h4 title={product.name}>{product.name}</h4>
                     {type === 'buy' && <span>{formatPrice(product.price!) + `${product.price! <= 5 ? ' (unidade)' : ''}`}</span>}
                 </div>
-                <button>
+                <div className={styles.card__data__button}>
                     {
                         type === 'buy'
                             ?
                             <a
-                                href={`https://api.whatsapp.com/send?phone=5583986903987&text=Ol%C3%A1.%20Tudo%20bem?%20Gostaria%20de%20adquirir%20o%20item: ${product.name}.`}
+                                href={`https://api.whatsapp.com/send?phone=5583986903987&text=Ol%C3%A1.%20Tude%20bem?%0AGostaria%20de%20encomendar%20um(a)%20${product.name}%20com%20este%20modelo%20(${getProductPhoto(product.photo)})`}
                                 target="_blank"
                                 className={styles.card__button}
                             >
@@ -49,12 +63,12 @@ export function Card({ product, type }: CardProps) {
                             :
                             <Link
                                 href={`/produtos/${product.id}`}
-                                style={{ display: 'inline-block', color: '#fff', width: '100%', padding: '0.75rem' }}
+                                className={styles.view__more__button}
                             >
                                 Ver mais
                             </Link>
                     }
-                </button>
+                </div>
             </div>
         </div>
     );

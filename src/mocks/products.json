@@ -36,6 +36,15 @@
     "description": "Celebre cada momento especial com convites personalizados que refletem o seu estilo único. Nossos convites são projetados com cuidado e atenção aos detalhes, para capturar a essência da ocasião que você está comemorando. Desde casamentos deslumbrantes até festas temáticas e eventos corporativos elegantes, nossos convites são feitos sob medida para transmitir a atmosfera e o propósito do seu evento. Escolha entre uma variedade de designs exclusivos, fontes elegantes e opções de personalização para criar um convite que seja verdadeiramente seu. Com cada detalhe cuidadosamente pensado, você está convidado a criar memórias inesquecíveis desde o momento em que o convite é recebido."
   },
   {
+    "id": 22,
+    "name": "Convite de casamento",
+    "category_id": 2,
+    "price": 6.50,
+    "created_at": "2023-08-22T15:32:56.825Z",
+    "photo": "https://i.ibb.co/YhZWZNK/5d1951a2-0cfb-4763-a5ff-7831aea3c8d3.jpg",
+    "description": "Este modelo acompanha o envelope totalmente personalizado. Celebre cada momento especial com convites personalizados que refletem o seu estilo único. Nossos convites são projetados com cuidado e atenção aos detalhes, para capturar a essência da ocasião que você está comemorando. Com cada detalhe cuidadosamente pensado, você está convidado a criar memórias inesquecíveis desde o momento em que o convite é recebido."
+  },
+  {
     "id": 6,
     "name": "Kit de Quadros com 4 peças",
     "category_id": 3,
@@ -81,6 +90,15 @@
     "description": "Carregue suas necessidades diárias com estilo usando nossas Sacolas Personalizadas. Criadas para unir praticidade e personalidade, essas sacolas oferecem espaço amplo e durabilidade. Escolha entre uma gama de opções de design e personalize com seu toque único. Seja para compras, trabalho ou lazer, você estará sempre acompanhado por uma sacola que reflete sua individualidade."
   },
   {
+    "id": 20,
+    "name": "Sacola Personalizada",
+    "category_id": 7,
+    "price": 2.50,
+    "created_at": "2023-08-22T14:39:25.731Z",
+    "photo": "https://imgur.com/0GUDsGg.jpg",
+    "description": "Criadas para unir praticidade e personalidade, essas sacolas oferecem espaço amplo e durabilidade. Escolha entre uma gama de opções de design e personalize com seu toque único. Seja para compras, trabalho ou lazer, você estará sempre acompanhado por uma sacola que reflete sua individualidade."
+  },
+  {
     "id": 5,
     "name": "Chaveiro Personalizado",
     "category_id": 4,
@@ -122,7 +140,52 @@
     "category_id": 6,
     "price": 15,
     "created_at": "2023-08-21T12:46:18.904Z",
-    "photo": "https://i.imgur.com/CAqfkoS.jpg",
+    "photo": ["https://i.imgur.com/CAqfkoS.jpg", "https://imgur.com/8IGeGb3.jpg"],
     "description": "Embrace a gratidão com nossas caixas para padrinhos de casamento. Um gesto elegante para honrar aqueles que compartilham esse momento especial. Personalize-as para expressar seu amor e apreço."
+  },
+  {
+    "id": 18,
+    "name": "Caixa sanfonada",
+    "category_id": 6,
+    "price": 13,
+    "created_at": "2023-08-22T12:46:18.904Z",
+    "photo": ["https://i.imgur.com/XY9Rc8p.jpg", "https://i.imgur.com/ObrtOEZ.jpg"],
+    "description": "Desvende emoções com a Caixa Sanfonada Personalizada. Surpreenda com um presente que revela histórias, criando memórias inesquecíveis. Personalize hoje e faça cada momento especial."
+  },
+  {
+    "id": 19,
+    "name": "Caixa para padrinhos (batismo)",
+    "category_id": 6,
+    "price": 15,
+    "created_at": "2023-08-22T12:46:18.904Z",
+    "photo": "https://imgur.com/FSdho0E.jpg",
+    "description": "mbrace a gratidão com nossas caixas para padrinhos de batismo. Um gesto elegante para honrar aqueles que compartilham esse momento especial. Personalize-as para expressar seu amor e apreço."
+  },
+  {
+    "id": 21,
+    "name": "Quadro personalizado (nascimento)",
+    "category_id": 1,
+    "price": 17,
+    "created_at": "2023-08-22T12:46:18.904Z",
+    "photo": "https://i.ibb.co/njHRwqG/3ed835ec-7324-47de-95de-0408e784423f.jpg",
+    "description": "Guarde memórias e celebre a vida de um pequeno com as suas informações de nascimento. Tenha esse registro de forma delicada e elegante."
+  },
+  {
+    "id": 22,
+    "name": "Centro de mesa (aniversário)",
+    "category_id": 9,
+    "price": 2,
+    "created_at": "2023-08-22T12:46:18.904Z",
+    "photo": "https://i.ibb.co/QHw6T05/609d9b80-938c-4385-b997-fdc6dea85b0c.jpg",
+    "description": "Tenha nas mesas do seu aniversário este item delicado e que diz muito sobre você para os seus convidados."
+  },
+  {
+    "id": 23,
+    "name": "Balas personalizadas",
+    "category_id": 10,
+    "price": 35,
+    "created_at": "2023-08-22T12:46:18.904Z",
+    "photo": "https://i.ibb.co/37vPZ72/a59ea7bf-5eab-4a77-b43f-e87e4885e42e.jpg",
+    "description": "Este pacote inclui 100 balinhas totalmente personalizadas e charmosas. Deleite seus sentidos com nossas Balas Personalizadas. Sabor excepcionalmente doce, embaladas com amor e personalizadas para tornar cada momento doce ainda mais memorável. Adoce a vida de alguém hoje."
   }
 ]
