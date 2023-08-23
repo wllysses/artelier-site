@@ -13,17 +13,13 @@ export const metadata: Metadata = {
   description: 'Somos o Artelier, uma loja virtual pensada para transformar seus sonhos em arte.',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <body className={poppins.className}>
-        <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} position="top-center"  autoClose={1000} />
+        <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} position="top-center" autoClose={1000} />
         {children}
-        </body>
+      </body>
     </html>
   );
 }
