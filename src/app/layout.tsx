@@ -1,6 +1,10 @@
+'use client';
+
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 import "./globals.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['200', '300', '400', '700'] })
 
@@ -16,7 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} position="top-center"  autoClose={1000} />
+        {children}
+        </body>
     </html>
   );
 }

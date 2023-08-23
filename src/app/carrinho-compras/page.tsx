@@ -6,8 +6,9 @@ import { toast } from "react-toastify";
 import { useStore } from "@/store/store";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import styles from "./page.module.scss";
 import { getProductPhoto } from "@/functions";
+import styles from "./page.module.scss";
+
 
 export default function ShoppingCart() {
 

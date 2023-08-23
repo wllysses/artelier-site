@@ -1,10 +1,11 @@
-import { BiLogoWhatsapp } from "react-icons/bi";
+import { useState } from "react";
 import { toast } from "react-toastify";
+import { BiLogoWhatsapp } from "react-icons/bi";
 import { useStore } from "@/store/store";
 import Link from "next/link";
 import { Product } from "@/models/ProductModel";
-import styles from "./Card.module.scss";
 import { formatPrice, getProductPhoto } from "@/functions";
+import styles from "./Card.module.scss";
 
 interface CardProps {
     product: Product
@@ -13,11 +14,23 @@ interface CardProps {
 
 export function Card({ product, type }: CardProps) {
 
-    const { addProduct } = useStore();
+    const { products, addProduct } = useStore();
+    const [exists, setExists] = useState<boolean | null>(null);
 
     function addProductOnCart(product: Product) {
         addProduct(product);
         toast.success('Adicionado ao carrinho 🛒');
+        checkProductAlreadyExistsInShoppingCart(product.id)
+    }
+
+    function checkProductAlreadyExistsInShoppingCart(id: number) {
+        const checkProducts = products.filter((product) => product.id === id);
+
+        if(checkProducts) {
+            setExists(true);
+        } else {
+            setExists(false);
+        }
     }
 
     return (
@@ -32,7 +45,12 @@ export function Card({ product, type }: CardProps) {
                     type === 'buy' &&
                     <div className={`${styles.view__more}`}>
                         <Link href={`/produtos/${product.id}`}>Ver mais</Link>
-                        <button onClick={() => addProductOnCart(product)}>Adicionar ao carrinho</button>
+                        <button 
+                            onClick={() => addProductOnCart(product)} 
+                            disabled={exists ? true : false}
+                        >
+                            Adicionar ao carrinho
+                        </button>
                     </div>
                 }
             </div>
