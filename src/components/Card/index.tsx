@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { BiLogoWhatsapp } from "react-icons/bi";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useStore } from "@/store/store";
 import Link from "next/link";
 import { Product } from "@/models/ProductModel";
-import { formatPrice, getProductPhoto } from "@/functions";
+import { formatPrice } from "@/functions";
 import styles from "./Card.module.scss";
 
 interface CardProps {
@@ -26,12 +26,13 @@ export function Card({ product, type }: CardProps) {
     function checkProductAlreadyExistsInShoppingCart(id: number) {
         const checkProducts = products.filter((product) => product.id === id);
 
-        if(checkProducts) {
+        if (checkProducts) {
             setExists(true);
         } else {
             setExists(false);
         }
     }
+
 
     return (
         <div className={styles.card__wrapper}>
@@ -45,12 +46,6 @@ export function Card({ product, type }: CardProps) {
                     type === 'buy' &&
                     <div className={`${styles.view__more}`}>
                         <Link href={`/produtos/${product.id}`}>Ver mais</Link>
-                        <button 
-                            onClick={() => addProductOnCart(product)} 
-                            disabled={exists ? true : false}
-                        >
-                            Adicionar ao carrinho
-                        </button>
                     </div>
                 }
             </div>
@@ -63,14 +58,14 @@ export function Card({ product, type }: CardProps) {
                     {
                         type === 'buy'
                             ?
-                            <a
-                                href={`https://api.whatsapp.com/send?phone=5583986903987&text=Ol%C3%A1.%20Tude%20bem?%0AGostaria%20de%20encomendar%20um(a)%20${product.name}%20com%20este%20modelo%20(${getProductPhoto(product.photo)})`}
-                                target="_blank"
+                            <button
                                 className={styles.card__button}
+                                onClick={() => addProductOnCart(product)}
+                                disabled={exists ? true : false}
                             >
-                                <BiLogoWhatsapp size={20} />
-                                <span>Comprar</span>
-                            </a>
+                                <AiOutlineShoppingCart size={18} />
+                                Adicionar ao carrinho
+                            </button>
                             :
                             <Link
                                 href={`/produtos/${product.id}`}
