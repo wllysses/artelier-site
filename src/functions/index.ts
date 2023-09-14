@@ -3,7 +3,8 @@ function formatPrice(price: number) {
 }
 
 function getProductPhoto(link: string | string[]) {
-    return Array.isArray(link) ? link[0] : link;
+    const isArray = Array.isArray(link); // return true if link is an array
+    return isArray ? link[0] : link;
 }
 
 export { formatPrice, getProductPhoto };
