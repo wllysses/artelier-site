@@ -23,7 +23,12 @@
     "category_id": 8,
     "price": 35,
     "created_at": "2023-08-21T13:02:11.307Z",
-    "photo": ["https://i.imgur.com/aHznFoM.jpg", "https://i.imgur.com/auCCbaN.jpg", "https://i.imgur.com/myD1Sca.jpg", "https://i.imgur.com/pYBIct6.jpg"],
+    "photo": [
+      "https://i.imgur.com/aHznFoM.jpg",
+      "https://i.imgur.com/auCCbaN.jpg",
+      "https://i.imgur.com/myD1Sca.jpg",
+      "https://i.imgur.com/pYBIct6.jpg"
+    ],
     "description": "Nosso lindo álbum de fotos personalizado companha 20 fotos (a sua escolha) em papel foto adesivo de alta qualidade. Preserve seus momentos preciosos com nosso álbum de fotos personalizado. Cada página conta a história única da sua vida, capturando memórias que durarão para sempre. Crie um tesouro de lembranças feitas sob medida"
   },
   {
@@ -39,7 +44,7 @@
     "id": 24,
     "name": "Convite de casamento",
     "category_id": 2,
-    "price": 6.50,
+    "price": 6.5,
     "created_at": "2023-08-22T15:32:56.825Z",
     "photo": "https://i.ibb.co/YhZWZNK/5d1951a2-0cfb-4763-a5ff-7831aea3c8d3.jpg",
     "description": "Este modelo acompanha o envelope totalmente personalizado. Celebre cada momento especial com convites personalizados que refletem o seu estilo único. Nossos convites são projetados com cuidado e atenção aos detalhes, para capturar a essência da ocasião que você está comemorando. Com cada detalhe cuidadosamente pensado, você está convidado a criar memórias inesquecíveis desde o momento em que o convite é recebido."
@@ -93,7 +98,7 @@
     "id": 20,
     "name": "Sacola Personalizada",
     "category_id": 7,
-    "price": 2.50,
+    "price": 5,
     "created_at": "2023-08-22T14:39:25.731Z",
     "photo": "https://imgur.com/0GUDsGg.jpg",
     "description": "Torne o próximo aniversário ou até mesmo o seu produto ainda mais especial com nossas sacolas personalizadas feitas de papel A4. Cada sacola é uma obra-prima de design e praticidade, projetada para encantar anfitriões, clientes ou até mesmo convidados igualmente."
@@ -104,7 +109,11 @@
     "category_id": 4,
     "price": 6,
     "created_at": "2023-08-10T18:23:20.026Z",
-    "photo": ["https://i.ibb.co/nCfvFZp/364147169-1470285950439954-5294608147613454511-n.jpg", "https://i.imgur.com/a3yx9ye.jpg", "https://i.imgur.com/Ixe1q5H.jpg"],
+    "photo": [
+      "https://i.ibb.co/nCfvFZp/364147169-1470285950439954-5294608147613454511-n.jpg",
+      "https://i.imgur.com/a3yx9ye.jpg",
+      "https://i.imgur.com/Ixe1q5H.jpg"
+    ],
     "description": "Leve seus sentimentos para onde quer que vá com nosso Chaveiro Personalizado. Este acessório prático e cheio de significado pode ser personalizado com nomes, datas ou até mesmo uma imagem especial. Feito com materiais duráveis, ele adiciona um toque pessoal às suas chaves ou à sua bolsa, mantendo sempre por perto um lembrete dos momentos que importam."
   },
   {
@@ -122,7 +131,11 @@
     "category_id": 1,
     "price": 18,
     "created_at": "2023-08-21T12:38:55.718Z",
-    "photo": ["https://i.imgur.com/fWCavKl.jpg", "https://i.imgur.com/9PzIe7T.jpg", "https://i.imgur.com/RUDSVQM.jpg"],
+    "photo": [
+      "https://i.imgur.com/fWCavKl.jpg",
+      "https://i.imgur.com/9PzIe7T.jpg",
+      "https://i.imgur.com/RUDSVQM.jpg"
+    ],
     "description": "Eleve o seu quarto com nosso quadro de porta personalizado. Adicione um toque de elegância e estilo, enquanto garante privacidade e tranquilidade. Um detalhe que faz toda a diferença."
   },
   {
@@ -131,7 +144,10 @@
     "category_id": 1,
     "price": 36,
     "created_at": "2023-08-21T12:45:22.257Z",
-    "photo": ["https://i.imgur.com/hMaCNlY.jpg", "https://i.imgur.com/ubV5XhD.jpg"],
+    "photo": [
+      "https://i.imgur.com/hMaCNlY.jpg",
+      "https://i.imgur.com/ubV5XhD.jpg"
+    ],
     "description": "Transforme suas lembranças em arte com nosso quadro mosaico. Cada peça é uma história contada em cores e formas únicas. Decore sua vida com momentos que durarão para sempre."
   },
   {
@@ -140,7 +156,10 @@
     "category_id": 6,
     "price": 15,
     "created_at": "2023-08-21T12:46:18.904Z",
-    "photo": ["https://i.imgur.com/CAqfkoS.jpg", "https://imgur.com/8IGeGb3.jpg"],
+    "photo": [
+      "https://i.imgur.com/CAqfkoS.jpg",
+      "https://imgur.com/8IGeGb3.jpg"
+    ],
     "description": "Embrace a gratidão com nossas caixas para padrinhos de casamento. Um gesto elegante para honrar aqueles que compartilham esse momento especial. Personalize-as para expressar seu amor e apreço."
   },
   {
@@ -149,7 +168,10 @@
     "category_id": 6,
     "price": 13,
     "created_at": "2023-08-22T12:46:18.904Z",
-    "photo": ["https://i.imgur.com/XY9Rc8p.jpg", "https://i.imgur.com/ObrtOEZ.jpg"],
+    "photo": [
+      "https://i.imgur.com/XY9Rc8p.jpg",
+      "https://i.imgur.com/ObrtOEZ.jpg"
+    ],
     "description": "Desvende emoções com a Caixa Sanfonada Personalizada. Surpreenda com um presente que revela histórias, criando memórias inesquecíveis. Personalize hoje e faça cada momento especial."
   },
   {
