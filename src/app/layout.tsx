@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "./globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 
-const poppins = Poppins({ subsets: ['latin'], weight: ['200', '300', '400', '700'] })
+const poppins = Poppins({ subsets: ['latin'], weight: ['200', '300', '400', '700'] });
 
 export const metadata: Metadata = {
   title: 'Artelier - Quadros & Personalizados',
